@@ -1,0 +1,58 @@
+CREATE TABLE type(
+	id INTEGER PRIMARY KEY,
+	name STRING NOT NULL,
+	created_at DATETIME NOT NULL,
+	updated_at DATETIME
+);
+	
+CREATE TABLE course(
+	id INTEGER PRIMARY KEY,
+	type STRING UNIQUE,
+	title STRING UNIQUE,
+	description TEXT,
+	
+	FOREIGN KEY (type) 
+		REFERENCES type (id) 
+			ON UPDATE NO ACTION
+);
+
+CREATE TABLE announcement(
+	id INTEGER PRIMARY KEY,
+	title STRING NOT NULL,
+	body STRING NOT NULL,
+	date DATETIME
+);
+
+
+flask shell
+from app.models import db, User, Announcement, Category, Course, Review
+db.create_all()
+
+
+a1 = Announcement(title='New courses being added!', body='New courses are being added this year, sign up now to become a CSM!')
+a2 = Announcement(title='Site maintenance has finished', body='The site maintenance has completed, thank you for your patience')
+db.session.add_all([a1, a2])
+db.session.commit()
+
+cat1 = Category(name='Certified')
+cat2 = Category(name='Non-certified')
+db.session.add_all([cat1, cat2])
+db.session.commit()
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False, unique=True)
+    courses = db.relationship('Course', backref='category', lazy='dynamic')
+
+    def __repr__(self):
+        return f'<Category {self.name}>'
+
+
+c1 = Course(types='Non-certified', title='Scrum Fundamentals', description='The Scrum Fundamentals course is tailored to help anyone interested to know more about Scrum; learn about key concepts in Scrum as defined in the SBOK® Guide; and to get a basic understanding of how Scrum framework works in delivering successful projects. Apply for the course today!')
+c2 = Course(types='Certified', title='Certified Scrum Master', description='This Scrum Master Certification consists of two days of classroom-based training, combining instructor-led teaching and practical exercises. On the final day of the course, you will take a 1-hour Scrum Master exam to confirm your knowledge.')
+c3 = Course(types='Certified', title='Certified Scrum Product Owner', description='In this course you will learn the framework, principles, and values that make scrum work, plus key skills and tools you need to be effective. You will discover how to juggle multiple stakeholders needs, get hands-on practice creating a product vision, and learn new ways to get to know your customers so that you can choose the right next piece of value to bring to market for them.')
+c4 = Course(types='Certified', title='Certified Agile Leadership', description='Our Certified Agile Leadership (CAL) training focuses on building the skills and competencies to become a more effective leader in an Agile context. To coach and lead your organisations to perform more effectively in this fast-paced and uncertain environment.')
+
+
+db.session.add_all([c1, c2, c3, c4])
+db.session.commit()

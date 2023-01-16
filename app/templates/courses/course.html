@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/courses/course.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block app_content %}
+<div class="container">
+    <div class="col-sm-6 col-md-3 course-img">
+        <div class="row">
+            <img src="{{ url_for('static', filename='course_pics/' + course.image) }}" alt="" class="thumbnail">
+            {% if current_user.is_authenticated and current_user.admin %}
+                <a href="{{ url_for('courses.edit_course', id=course.id) }}" class="btn btn-primary" >Edit</a>
+                <!-- Button trigger modal -->
+                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteCourse">Delete</a>
+            {% endif %}
+            <a href="{{ url_for('main.courses') }}" class="btn btn-default">Return to all courses</a>
+        </div>
+    </div>
+
+    <!-- Delete Course Modal-->
+    <div class="modal fade" id="deleteCourse" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="deleteModalLabel">Deleting Course: {{ course.title }}</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <a href="{{ url_for('courses.delete_course', id=course.id) }}" class="btn btn-danger">Yes</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="content-section">
+            <h3>{{ course.title.title() }}</h3>
+            <h5><b>£{{course.price}}</b></h5>
+            
+            <hr>
+            <h4>Description</h4>
+            <p class="text-justify">{{ course.summary }}</p>
+            <hr>
+            <div>
+                <h4>Reviews</h4>
+                {% if average %}
+                    <b>Average rating: <span class="avg-rating" data-score="{{ average }}" > </span> ({{average }})</b>
+                {% endif %}
+            </div><br>
+            {% if course.reviews and course.reviews.count() > 0 %}
+                {% for review in course.reviews.all() %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding-right:5px;"></span>
+                            <span>{{ review.user.username.upper() }}</span><br>
+                            <span class="star-rating" data-score="{{ review.rating }}"></span><br>
+                            <span class="text-right">Created {{ moment(review.created_at).fromNow() }}</span>
+                            {% if review.updated %}
+                                <br><span class="text-right">Updated {{ moment(review.updated_at).fromNow()}}</span>
+                            {% endif %}
+                        </div>
+                        <div class="panel-body">
+                            <p class="text-justify">{{ review.text }}</p>
+                            <hr>
+                            {% if current_user.username == review.user.username %}
+                            <a href="{{ url_for('courses.edit_review', id=review.course_id) }}" class="btn btn-primary btn-sm">Edit </a>
+                            <!-- <a href="#" class="btn btn-danger btn-sm">Delete </a> -->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">
+                                Delete
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" id="deleteModalLabel">Deleting review</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Are you sure?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                        <a href="{{ url_for('courses.delete_review', id1=course.id, id2=review.id) }}" class="btn btn-success">Yes</a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}    
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <br>
+            {% if current_user.is_authenticated %}
+            <div style="padding-bottom: 100px;">
+                {% include 'courses/_review_form.html' %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <br><br>
+    <hr>
+</div><br>    
+{% endblock %}

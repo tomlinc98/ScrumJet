@@ -1,0 +1,41 @@
+/* ====== about =====
+
+1. 
+
+===================== */
+
+
+/*=== 1. content_top ===*/
+
+/*== 6. counter up ==*/
+.counter_box {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.counter_text {
+  margin-top: 18px;
+  margin-bottom: 18px; 
+}
+
+.main_counter_area{       
+  margin-top: 30px;  
+  background-size: cover;
+  overflow: hidden;
+/*  border-top: 1px solid #001219; */
+/*  border-bottom: 1px solid #001219; */
+}
+
+.main_counter_area .main_counter_content .single_counter{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+.main_counter_area .main_counter_content .single_counter i{
+  font-size:36px;
+}
+
+.selectBox {
+  margin-bottom: 20px;
+  width: 100%;
+}

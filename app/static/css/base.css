@@ -1,0 +1,108 @@
+/* ====== home =====
+
+1. body
+2. navbar
+
+===================== */
+
+/*=== 1. body ===*/
+
+body {
+  border: none;
+  background:#ffffff;
+  color: #5a5a5a;
+  padding-bottom: 20px;  
+}
+
+body h1 h2 h3 p a {
+  color: #5a5a5a;
+}
+
+/*=== 2. navbar ===*/
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 8px; /* firefox bug fix */
+  width: auto;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar li a {
+  font-size: 18px;
+}
+
+/*=== 3. footer ===*/
+#page-footer {
+  padding: 3rem 2rem 1rem;
+  background:#fafafa
+}
+
+hr {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+/* Add right borders for the divs... */
+#page-footer .footer-main-links div {
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  padding: 1.25rem;
+}
+
+/* ...except no border on the right-most div */
+#page-footer .footer-main-links div:last-of-type {
+  border: none;
+}
+
+/* Remove bullets for social social icons */
+#page-footer .social-icons {
+  list-style-type: none;
+}
+
+/* Style the social icon list items further */
+#page-footer .social-icons li {
+  margin-left: .25rem;
+  margin-right: .25rem;
+  display: inline;
+}
+
+/* Remove styling on the main columnar links */
+.footer-links li {
+  background: transparent;
+  border: 0px;
+  padding: .25rem;
+}
+
+/* Styling for the ancillary links */
+#page-footer .footer-ancillary-links {
+  list-style-type: none;
+}
+
+#page-footer .footer-ancillary-links li {
+  display: inline;
+  margin-left: .3rem;
+  margin-right: .3rem;
+  text-align: right;
+  font-size: smaller;
+}
+
+/*=== 4. Pagination styling===*/
+.pagination-page-info {
+  padding: .6em;
+  padding-left: 0;
+  width: 40em;
+  margin: .5em;
+  margin-left: 0;
+  font-size: 12px;
+}
+
+.pagination-page-info b {
+  color: black;
+  background: #6aa6ed;
+  padding-left: 2px;
+  padding: .1em .25em;
+  font-size: 150%;
+}

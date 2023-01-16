@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <center>
+        <h3>File or Page Not Found</h3>
+        <p><a href="{{ url_for('main.index') }}" class="btn btn-primary">Back</a></p>
+    </center>
+{% endblock %}

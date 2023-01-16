@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1>Find a Course</h1>
+    <p class="lead">Welcome to our courses page. Find a certified, or non-certified course today!</p>
+  </div>
+
+  <form action="{{ url_for('courses.search') }}" method="POST"> 
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <div class="input-group">
+          <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-primary" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <br>
+
+  <!-- Example row of columns -->
+  <div class="row">
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-2">
+
+      <!-- Category Widget -->
+      <div class="panel panel-default">
+        <div class="panel-heading"><b>Categories</b></div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+                <a href="{{ url_for('main.courses') }}">All</a>
+            </li>
+            {% for category in categories %}
+            <li class="list-group-item">
+                <a href="{{ url_for('main.courses', cat=category) }}">{{ category.title() }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+    <div class="col-md-10">
+      {% for course in courses %}
+        <h2>{{ course.title.title() }}</h2>
+        <p class="text-danger">£{{course.price}}</p>
+        <h4>Description</h4>
+        <p class="text-justify">{{ course.summary }}</p>
+        <p><a class="btn btn-primary" href="{{ url_for('courses.course', id=course.id) }}" role="button">View details &raquo;</a></p>
+        <hr class="solid">
+      {% endfor %}
+      </div>
+
+<div class="row">
+  <div class="text-center row col-md-12">
+    <!--{{ pagination.info }}-->
+    {{ pagination.links }} 
+  </div>
+</div>
+
+{% endblock %}

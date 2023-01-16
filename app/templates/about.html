@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/about.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block app_content %}
+
+<!-- jumbotron -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello, world!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
+
+<!-- features -->
+  <div class="marketing-inner clearfix">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <div class="marketing-image">
+          <img src="#" alt="" class="img-responsive"/>
+          <h3>Feature 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <div class="marketing-image">
+          <img src="#" alt="" class="img-responsive"/>
+          <h3>Feature 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <div class="marketing-image">
+          <img src="#" alt="" class="img-responsive"/>
+          <h3>Feature 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+        </div>
+      </div>
+    </div> <!-- row -->
+  </div> <!-- marketing-inner -->
+
+<!-- team -->
+  <section id="counter" class="counter">
+    <div class="main_counter_area">
+        <div class="overlay counter_box">
+            <div class="container">
+                <div class="row">
+                    <div class="main_counter_content text-center white-text wow fadeInUp">
+                        <div class="col-md-3">
+                            <div class="single_counter counter_box counter_text">
+                                <i class="glyphicon glyphicon-education counter_text"></i>
+                                <h2 class="statistic-counter">30</h2>
+                                <span></span>
+                                <p>Academics</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single_counter counter_box counter_text">
+                                <i class="glyphicon glyphicon-ok counter_text"></i>
+                                <h2 class="statistic-counter">1000</h2>
+                                <p>Satisfied Students</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single_counter counter_box counter_text">
+                                <i class="glyphicon glyphicon-user counter_text"></i>
+                                <h2 class="statistic-counter">500</h2>
+                                <p>Currently Enrolled</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single_counter counter_box counter_text">
+                                <i class=" glyphicon glyphicon-pencil counter_text"></i>
+                                <h2 class="statistic-counter">400</h2>
+                                <p>Resources</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section><!-- end counter -->
+
+<!-- testimonials-->
+
+{% endblock %}
