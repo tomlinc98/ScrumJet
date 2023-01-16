@@ -147,3 +147,6 @@ GitHub.sublime-settings
 # Flask #
 instance/
 .webassets-cache
+
+# Bootstrap #
+bootstrap-3.3.7
