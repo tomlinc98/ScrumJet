@@ -32,10 +32,6 @@ body h1 h2 h3 p a {
   margin-bottom: 20px;
 }
 
-.navbar li a {
-  font-size: 18px;
-}
-
 /*=== 3. footer ===*/
 #page-footer {
   padding: 3rem 2rem 1rem;
