@@ -1,101 +1,101 @@
 {% extends "base.html" %}
 
 {% block styles %}
-    {{ super() }}
-    <link href="{{url_for('static', filename='css/sitemap.css')}}" rel="stylesheet">
+{{ super() }}
+<link href="{{url_for('static', filename='css/sitemap.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block app_content %}
 
 
 
-    <div class="container">
-        <br>
-        <br>
-        <div class="row">
-            <h3>ScrumJet Site Map</h3>
-            <br>
-            <h4>Main</h4>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.index') }}" class="text-primary">Home</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.courses') }}" class="text-primary">Courses</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" class="text-primary"></a>
-            </div>		
-        </div>
-        <div class="row">
-            <br>
-            <h4>About</h4>
-            <div class="col-sm-4">
-                <a href="#" class="text-primary">Sponsors</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.contact') }}" class="text-primary">Contact</a>
-            </div>				
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.about') }}" class="text-primary">About Us</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" class="text-primary"></a>
-            </div>				
-        </div>
-        <br>
-        <div class="row">
-            <h4>News&Events</h4>
-            <div class="col-sm-4">
-                <a href="#" class="text-primary">RSS Feeds</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" class="text-primary">Articles</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.blog') }}" class="text-primary">Blogs</a>
-            </div>
-            <br>				
-        </div>
-        <br>
-        <div class="row">
-            <h4>Legal</h4>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.terms') }}" class="text-primary">Terms & Conditions</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ url_for('main.policy') }}" class="text-primary">Privacy Policy</a>
-            </div>
-            <br>				
-        </div>
-        <br>
-        <div class="row">
-            <h4>Socials</h4>
-            <div class="col-sm-4">
-                <a href="https://www.facebook.com/profile.php?id=100088241812507" class="text-primary">Facebook</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="https://twitter.com/ScrumJet" class="text-primary">Twitter</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="https://www.instagram.com/scrum_jet22/" class="text-primary">Instagram</a>
-            </div>
-            <br>				
-        </div>
-        <br>
-        <div class="row">
-            <h4>Account</h4>
-            <div class="col-sm-4">
-                <a href="{{ url_for('auth.login') }}" class="text-primary">Login</a>
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ url_for('auth.register') }}" class="text-primary">Register</a>
-            </div>
-            <br>				
-        </div>
-        <br>
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <h3>ScrumJet Site Map</h3>
+    <br>
+    <h4>Main</h4>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.index') }}" class="text-primary">Home</a>
     </div>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.courses') }}" class="text-primary">Courses</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="#" class="text-primary"></a>
+    </div>
+  </div>
+  <div class="row">
+    <br>
+    <h4>About</h4>
+    <div class="col-sm-4">
+      <a href="#" class="text-primary">Sponsors</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.contact') }}" class="text-primary">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.about') }}" class="text-primary">About Us</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="#" class="text-primary"></a>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <h4>News&Events</h4>
+    <div class="col-sm-4">
+      <a href="#" class="text-primary">RSS Feeds</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="#" class="text-primary">Articles</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.blog') }}" class="text-primary">Blogs</a>
+    </div>
+    <br>
+  </div>
+  <br>
+  <div class="row">
+    <h4>Legal</h4>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.terms') }}" class="text-primary">Terms & Conditions</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="{{ url_for('main.policy') }}" class="text-primary">Privacy Policy</a>
+    </div>
+    <br>
+  </div>
+  <br>
+  <div class="row">
+    <h4>Socials</h4>
+    <div class="col-sm-4">
+      <a href="https://www.facebook.com/profile.php?id=100088241812507" class="text-primary">Facebook</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="https://twitter.com/ScrumJet" class="text-primary">Twitter</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="https://www.instagram.com/scrum_jet22/" class="text-primary">Instagram</a>
+    </div>
+    <br>
+  </div>
+  <br>
+  <div class="row">
+    <h4>Account</h4>
+    <div class="col-sm-4">
+      <a href="{{ url_for('auth.login') }}" class="text-primary">Login</a>
+    </div>
+    <div class="col-sm-4">
+      <a href="{{ url_for('auth.register') }}" class="text-primary">Register</a>
+    </div>
+    <br>
+  </div>
+  <br>
+</div>
 
 
 
