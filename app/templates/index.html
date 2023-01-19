@@ -7,8 +7,6 @@
 
 {% block app_content %}
 
-
-
 <!-- carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- indicators -->
@@ -128,65 +126,73 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- divider to seperate hero area and homepage content -->
-
-
-<!-- about & announcements -->
-<div class="row">
 
   <!-- about -->
-  <div class="col-lg-8" style="padding-top: 2rem;">
-    <a><img class="card-img-top" src="{{url_for('static', filename='home/about.jpg')}}" alt="campus image"></a>
-    <div class="card-body">
+  <div class="row" style="padding-top: 4rem;">
+    <div class="col-md-3">
       <h2 class="card-title">Welcome to ScrumJET</h2>
       <p class="card-text">We are a leading scrum specialised education center. Experts in Agile and Scrum, we work
         with clients from all over the world to deliver online, physical and blended learning.</p>
       <a class="btn btn-primary" href="{{ url_for('main.about') }}">Read more</a>
     </div>
+    <div class="col-md-9">
+      <a><img class="card-img-top" src="{{url_for('static', filename='home/about.jpg')}}" alt="campus image"></a><img />
+    </div>
   </div>
 
-  <!-- announcements -->
-  <div class="col-lg-4" style="padding-top: 2rem;">
-    <div class="card mb-6">
-      <div class="card-header">Announcements</div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-12">
-            <ul class="list-unstyled mb-0">
-              {% for announcement in announcements %}
-              <li>
-                <h4>{{ announcement.title }}</h4>
-                <p>{{ announcement.body }}</p>
-              </li>
-              {% endfor %}
-            </ul>
+
+  <hr>
+
+  <!-- basics of scrum -->
+  <div class="row">
+    <div class="col-md-8 basics">
+      <h4>The Basics of Scrum</h4>
+      <ul class="entry-content" style="list-style-type: square;">
+        <li>Scrum is a simple process that allows teams to build products incrementally in iterations,
+          to keep abreast of the changing market needs and align themselves to the organizations business goals.
+        </li>
+        <br>
+        <li>It also allows us to focus on delivering the highest business value in the shortest time. This is
+          designed for teams with fewer than 10 dividing works into goals to complete within a time frame called
+          sprints, from 2-4 weeks.
+        </li>
+        <br>
+        <li>The Scrum team evaluate the development of work every day with stand-up meetings (Daily Scrum)
+          maximum of 15 minutes.
+        </li>
+        <br>
+        <li>Check out one of our courses today to find out more!
+        </li>
+      </ul>
+    </div>
+
+    <!-- announcements -->
+    <div class="col-md-4 announcements">
+      <div class="card mb-6">
+        <h3 class="text-center"><strong>Announcements</strong></h3>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="list-group">
+                {% for announcement in announcements %}
+                <li class="list-group-item">
+                  <font style="vertical-align: inherit;">
+                    <h4>{{ announcement.title }}</h4>
+                    <p>{{ announcement.body }}</p>
+                  </font>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- basics of scrum -->
-<div class="basics">
-  <div class="row">
-    <div class="col-md-6">
-      <h4>The Basics of Scrum</h4>
-      <p class="text-muted">Scrum is a simple process that allows teams to build products incrementally in iterations,
-        to keep abreast of the changing market needs and align themselves to the organizations business goals.
-        <br><br> It also allows us to focus on delivering the highest business value in the shortest time. This is
-        designed for teams with fewer than 10 dividing works into goals to complete within a time frame called
-        sprints, from 2-4 weeks.
-        <br><br> The Scrum team evaluate the development of work every day with stand-up meetings (Daily Scrum)
-        maximum of 15 minutes.
-        <br><br> Check out one of our courses today to find out more!
-      </p>
-    </div>
-    <div class="col-md-6">
-      <img src="{{url_for('static', filename='home/scrum.png')}}" class="img-responsive" alt="scrum cycle" />
-    </div>
+  <!-- scrum basics image -->
+  <div class="col-md-8" style="padding-top: 4rem; padding-bottom: 4rem;">
+    <img src="{{url_for('static', filename='home/scrum.png')}}" class="img-responsive" alt="scrum cycle" />
   </div>
 </div>
 
@@ -194,7 +200,7 @@
 </div>
 
 <!-- become a csm -->
-<div class="csm">
+<div class="container-fluid csm" style="padding-top: 4rem;">
   <div class="container">
     <div class="row">
       <h3>— Become a Certified Scrum Master! —</h3>
@@ -218,6 +224,8 @@
 
 <!-- start the container again -->
 <div class="container">
+
 </div>
+
 
 {% endblock %}
