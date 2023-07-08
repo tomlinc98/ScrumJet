@@ -11,7 +11,7 @@ Our team applies the Scrum methodology, which organizes our work into manageable
 ## Tech Stack 💻
 
 - **Front-end**: HTML/CSS, Bootstrap
-- **Back-end**: Flask (Python)
+- **Back-end**: Flask (Python), Javascript
 - **Database**: SQLite
 
 ## Features 🎁
