@@ -2,7 +2,7 @@
 
 ScrumJET is a collaborative group assignemnt project developed by a Scrum team of Computer Science students. Our mission is to create a user-friendly, minimalist, and aesthetically pleasing commercial website for a popular Online Training Course business. This platform is envisioned to advertise and sell Scrum and other computer science-related certification and non-certification courses via the internet or specific training centers.
 
-This project is our response to a brief set by Dr S.X. Laurence, who acts as our Product Owner, guiding us with a specification of core features to include in the new site.
+This project is our response to a brief set by our Project Management and Development Tutor, who acts as our Product Owner, guiding us with a specification of core features to include in the new site.
 
 ## Project Methodology 📝
 
