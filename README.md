@@ -14,15 +14,6 @@ Our team applies the Scrum methodology, which organizes our work into manageable
 - **Back-end**: Flask (Python), Javascript
 - **Database**: SQLite
 
-## Features 🎁
-
-Our application is a work in progress, but here are the core features we aim to deliver:
-
-- User-friendly and minimalist interface designed for easy navigation.
-- Comprehensive online courses in Scrum and other computer science-related topics.
-- Course delivery via the internet or at specific training centers.
-- An integrated Learning Management System (LMS).
-
 ## Getting Started 🏁
 
 To get a local copy up and running, follow these simple steps.
